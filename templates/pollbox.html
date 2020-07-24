@@ -1,0 +1,54 @@
+<form method="POST">
+{% for film in films %}
+
+<fieldset class="pollbox" style="white-space: nowrap; margin=0px">
+    <legend align="center">{{ film }}</legend>
+    <div id="pair">
+    <label for="-2">Trash</label>
+    <input type="radio" name="{{ film }}" value="-2" id="but">
+    </div>
+    <div id="pair">
+    <label for="-1">Dislike</label>    
+    <input type="radio" name="{{ film }}" value="-1" id="but">
+    </div>
+    <div id="pair">
+    <label for="0" align="center">Neutral</label>     
+    <input type="radio" name="{{ film }}" value="0" id="but">
+    </div>    
+    <div id="pair">
+    <label for="1">Like</label>        
+    <input type="radio" name="{{ film }}" value="1" id="but">
+    </div>
+    <div id="pair">
+    <label for="2">Lush</label>       
+    <input type="radio" name="{{ film }}" value="2" id="but">
+    </div>
+</fieldset>
+
+
+{% endfor %}
+
+<input type="submit" name="Submit"  style="display:block;margin-left: auto; margin-right: auto;">
+</form>
+
+
+
+<style>
+#but {
+    display: block;
+    margin-left:auto;
+    margin-right:auto;
+    text-align: center;
+    font-size: default;
+}
+#pair {
+    float: left;
+    width:20%;
+    margin-left:auto;
+    margin-right:auto;
+    text-align: center;
+
+
+    
+}
+</style>
