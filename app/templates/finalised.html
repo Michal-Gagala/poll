@@ -1,5 +1,10 @@
-
 The film that won was {{ winner }}!
 
 
+<ul>
+{% for film in films %}
+    <li>{{ film }} got a net {{ results[films.index(film)] }}</li>
+{% endfor %}
+</ul>
 
+The number of people who voted was {{ voteramount }}
