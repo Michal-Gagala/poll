@@ -64,6 +64,12 @@ def results(id):
             cur.close()
             db.close()
 
+            # Re-order the columns and votes to present in order
+            l = len(columns)
+            newcolumns = [' ' for x in range(l)]
+            columnindexlist = [columns.index(column) for column in columns]
+            
+
 
 
             return render_template('finalised.html', winner=winner, films=columns, results=results, voteramount=voters)
@@ -155,7 +161,15 @@ def vote(id):
     if request.method == 'POST':
         #IP adding?
 
+        cur.execute('SELECT "voterip" FROM {0}'.format('poll'+str(id)))
+
+        ips = cur.fetchall()
+
         ip = request.remote_addr
+
+        if ip in ips:
+            info('{} tried to vote twice'.format(ip))
+            return redirect(url_for('results', id=id))
 
         info('{} POSTed to vote'.format(ip))
 
