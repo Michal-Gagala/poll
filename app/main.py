@@ -68,7 +68,7 @@ def results(id):
             l = len(columns)
             newcolumns = [' ' for x in range(l)]
             columnindexlist = [columns.index(column) for column in columns]
-            
+
 
 
 
@@ -161,6 +161,9 @@ def vote(id):
     if request.method == 'POST':
         #IP adding?
 
+        db = sq.connect('db.sqlite3')
+        cur=db.cursor()
+
         cur.execute('SELECT "voterip" FROM {0}'.format('poll'+str(id)))
 
         ips = cur.fetchall()
@@ -183,8 +186,7 @@ def vote(id):
                                                                                    ','.join(values))
 
 
-        db = sq.connect('db.sqlite3')
-        cur=db.cursor()
+
         cur.execute(command)
         db.commit()
         info('{} had vote added to table'.format(ip))
