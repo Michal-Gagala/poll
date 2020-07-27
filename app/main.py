@@ -64,12 +64,11 @@ def results(id):
             cur.close()
             db.close()
 
-            # Re-order the columns and votes to present in order
-            l = len(columns)
-            newcolumns = [' ' for x in range(l)]
-            columnindexlist = [columns.index(column) for column in columns]
 
-
+            matched = [x for x in zip(results, columns)]
+            matched = sorted(matched, key= lambda x: x[0], reverse=True)
+            results = [x[0] for x in matched]
+            columns = [x[1] for x in matched]
 
 
             return render_template('finalised.html', winner=winner, films=columns, results=results, voteramount=voters)
@@ -124,8 +123,6 @@ def results(id):
             winner = choices([columns[x] for x in indices], weights = [results[x] for x in indices], k=1)[0]
 
 
-            # match up the sums with the films
-            # do the randomisation, figure out the thresholds, how many to put into the randomiser, what to do if there's a lot of things at the top
 
 
 
@@ -143,9 +140,10 @@ def results(id):
             cur.close()
             db.close()
 
-
-
-            #print(results)
+            matched = [x for x in zip(results, columns)]
+            matched = sorted(matched, key= lambda x: x[0], reverse=True)
+            results = [x[0] for x in matched]
+            columns = [x[1] for x in matched]
 
             return render_template('finalised.html', winner=winner, films=columns, results=results, voteramount=voters)
         else:
