@@ -2,15 +2,24 @@
 
 {% block body %}
 
-The film that won was {{ winner }}!
+<div class="superContainer">
+    <div class="resultContainer">
+        <h2 class="resultTitle">The film that won was {{ winner }}!</h2>
+    </div>
 
+    <br>
+    
+    {% for film in films %}
+        <br>
+        <p1 style="block">{{ film }} got a net {{ results[films.index(film)] }}</p1>
+        
+        
+    {% endfor %}
+    <br>
+    <br>
 
-<ul>
-{% for film in films %}
-    <li>{{ film }} got a net {{ results[films.index(film)] }}</li>
-{% endfor %}
-</ul>
+    The number of people who voted was {{ voteramount }}
 
-The number of people who voted was {{ voteramount }}
-
+</div>    
+    
 {% endblock %}

@@ -1,6 +1,8 @@
 * {
     font-family: 'Open Sans', sans-serif;
+    color: #EFF7CF
 }
+
 
 .button {
     display: block;
@@ -19,7 +21,9 @@
 }
 
 .submit {
-    margin: 20px
+    margin: 20px;
+    background: url(img/texture.png) repeat 0 0;
+    border-radius: 4px;
 }
 
 
@@ -28,17 +32,36 @@ body {
 
 }
 
-legend {
+legend, .resultTitle {
     font-family: 'Arvo', serif;
     font-size: large;
+    color: #C12303;
+    font-weight: bold;
 }
 
 textarea {
     background: url(img/texture.png) repeat 0 0;
     border-radius: 8px;
+    border-color: #EFF7CF;
+    padding: 4px
 }
 
-fieldset {
+fieldset, .resultContainer {
+    border-style: groove;
     border-width: 4px;
     border-radius: 16px;
+    border-color: #EFF7CF
 }
+
+.superContainer {
+    text-align: center;
+}
+
+.resultContainer {
+    margin: 4 auto;
+    display: inline-block;
+    padding: 0px 16px;
+    text-align: center;
+
+}
+

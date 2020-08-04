@@ -1,0 +1,50 @@
+<html>
+
+<head>
+
+<link rel="stylesheet" type="text/css" href="../static/style.css">
+
+<link href="https://fonts.googleapis.com/css2?family=Arvo&family=Open+Sans&display=swap" rel="stylesheet">
+
+</head>
+<body>
+
+<form action="create" method="POST" id="filmform">
+
+<fieldset class="pollbox" style="white-space: nowrap; margin=0px">
+    <legend align="center">Films</legend>
+    <textarea type="text" class="filmname" id="films" name="films" cols="60" rows="14" autofocus=True align="center" style="margin-left: auto; margin-right: auto; display:block;" form="filmform" placeholder="Write an enter-separated list of film names" required=True></textarea>
+</fieldset>
+
+
+<input type="submit" name="Submit" class="submit" style="display:block;margin-left: auto; margin-right: auto;">
+</form>
+    
+    
+<fieldset class="pollbox" style="white-space: nowrap; margin=0px">
+    <legend align="center">{{ film }}</legend>
+    <div class="buttonContainer">
+    <label for="-2">Trash</label>
+    <input type="radio" name="{{ film }}" value="-2" class="button">
+    </div>
+    <div class="buttonContainer">
+    <label for="-1">Dislike</label>    
+    <input type="radio" name="{{ film }}" value="-1" class="button">
+    </div>
+    <div class="buttonContainer">
+    <label for="0" align="center">Neutral</label>     
+    <input type="radio" name="{{ film }}" value="0" class="button" checked="checked">
+    </div>    
+    <div class="buttonContainer">
+    <label for="1">Like</label>        
+    <input type="radio" name="{{ film }}" value="1" class="button">
+    </div>
+    <div class="buttonContainer">
+    <label for="2">Lush</label>       
+    <input type="radio" name="{{ film }}" value="2" class="button">
+    </div>
+</fieldset>
+    
+</body>
+    
+</html>
