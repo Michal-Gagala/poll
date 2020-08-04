@@ -1,4 +1,5 @@
 {% extends "base.html" %}
+
 {% block body %}
 
 <form method="POST">
@@ -6,25 +7,25 @@
 
 <fieldset class="pollbox" style="white-space: nowrap; margin=0px">
     <legend align="center">{{ film }}</legend>
-    <div id="pair">
+    <div class="buttonContainer">
     <label for="-2">Trash</label>
-    <input type="radio" name="{{ film }}" value="-2" id="but">
+    <input type="radio" name="{{ film }}" value="-2" class="button">
     </div>
-    <div id="pair">
+    <div class="buttonContainer">
     <label for="-1">Dislike</label>    
-    <input type="radio" name="{{ film }}" value="-1" id="but">
+    <input type="radio" name="{{ film }}" value="-1" class="button">
     </div>
-    <div id="pair">
+    <div class="buttonContainer">
     <label for="0" align="center">Neutral</label>     
-    <input type="radio" name="{{ film }}" value="0" id="but" checked="checked">
+    <input type="radio" name="{{ film }}" value="0" class="button" checked="checked">
     </div>    
-    <div id="pair">
+    <div class="buttonContainer">
     <label for="1">Like</label>        
-    <input type="radio" name="{{ film }}" value="1" id="but">
+    <input type="radio" name="{{ film }}" value="1" class="button">
     </div>
-    <div id="pair">
+    <div class="buttonContainer">
     <label for="2">Lush</label>       
-    <input type="radio" name="{{ film }}" value="2" id="but">
+    <input type="radio" name="{{ film }}" value="2" class="button">
     </div>
 </fieldset>
 

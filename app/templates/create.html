@@ -2,16 +2,18 @@
 
 
 {% block body %}
+
 <form action="create" method="POST" id="filmform">
 
 <fieldset class="pollbox" style="white-space: nowrap; margin=0px">
     <legend align="center">Films</legend>
-    <textarea type="text" class="filmname" id="films" name="films" cols="40" rows="8" align="center" style="margin-left: auto; margin-right: auto; display:block;" form="filmform"></textarea>
+    <textarea type="text" class="filmname" id="films" name="films" cols="60" rows="14" autofocus=True align="center" style="margin-left: auto; margin-right: auto; display:block;" form="filmform" placeholder="Write an enter-separated list of film names" required=True></textarea>
 </fieldset>
 
 
-<input type="submit" name="Submit"  style="display:block;margin-left: auto; margin-right: auto;">
+<input type="submit" name="Submit" class="submit" style="display:block;margin-left: auto; margin-right: auto;">
 </form>
+
 {% endblock %}
 
 

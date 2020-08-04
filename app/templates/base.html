@@ -1,31 +1,16 @@
-{% block head %}
+<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
 
-{% endblock %}
+<link href="https://fonts.googleapis.com/css2?family=Arvo&family=Open+Sans&display=swap" rel="stylesheet">
 
-<body>
-{% block body %}
+<head>
+    {% block head %}
 
-{% endblock %}
-</body>
-
-<style>
-#but {
-    display: block;
-    margin-left:auto;
-    margin-right:auto;
-    text-align: center;
-    font-size: default;
-}
-#pair {
-    float: left;
-    width:20%;
-    margin-left:auto;
-    margin-right:auto;
-    text-align: center;
+    {% endblock %}
+</head>
     
-}
-body {
-    background: url(texture.png) repeat 0 0;
+    
+<body>
+    {% block body %}
 
-    }
-</style>
+    {% endblock %}
+</body>
